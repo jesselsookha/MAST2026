@@ -372,69 +372,41 @@ The navigation prop provides methods such as:
 The navigation flow for this application is:
 
 ```text
-                    +-------------------+
-                    |  NavigationContainer |
-                    +-------------------+
-                              |
-                              v
-                    +-------------------+
-                    |  Stack.Navigator  |
-                    | initialRouteName: |
-                    |     "Home"        |
-                    +-------------------+
-                              |
-        +---------------------+---------------------+
-        |                     |                     |
-        v                     v                     v
-+-----------+     +-----------+     +-----------+     +-----------+
-| Home      |     | Profile   |     | Details   |     | Settings  |
-| Screen    | --> | Screen    | --> | Screen    | --> | Screen    |
-+-----------+     +-----------+     +-----------+     +-----------+
-     |                   |                   |               |
-     | navigate('Profile') | navigate('Details') | navigate('Settings') | goBack()
-     +-------------------+-------------------+-------------------+
+                    ┌─────────────────────────────┐
+                    │     NavigationContainer     │
+                    └──────────────┬──────────────┘
+                                   ↓
+                    ┌─────────────────────────────┐
+                    │       Stack.Navigator       │
+                    │                             │
+                    │   initialRouteName: "Home"  │
+                    └──────────────┬──────────────┘
+                                   ↓
+                          ┌─────────────────┐
+                          │   Home Screen   │
+                          └────────┬────────┘
+                          navigate('Profile')
+                                   ↓
+                          ┌─────────────────┐
+                          │ Profile Screen  │
+                          └────────┬────────┘
+                          navigate('Details')
+                                   ↓
+                          ┌─────────────────┐
+                          │ Details Screen  │
+                          └────────┬────────┘
+                          navigate('Settings')
+                                   ↓
+                          ┌─────────────────┐
+                          │ Settings Screen │
+                          └─────────────────┘
+                                   │
+                                goBack()
+                                   ↓
+                          ┌─────────────────┐
+                          │ Previous Screen │
+                          └─────────────────┘
 
-                    ┌─────────────────────────┐
-                    │   NavigationContainer   │
-                    └────────────┬────────────┘
-                                 │
-                                 ▼
-                    ┌─────────────────────────┐
-                    │     Stack.Navigator     │
-                    │                         │
-                    │  initialRouteName:      │
-                    │       "Home"            │
-                    └────────────┬────────────┘
-                                 │
-          ┌──────────────────────┼──────────────────────┐
-          │                      │                      │
-          ▼                      ▼                      ▼
-   ┌────────────┐        ┌────────────┐        ┌────────────┐
-   │    Home    │        │  Profile   │        │  Details   │
-   │   Screen   │        │   Screen   │        │   Screen   │
-   └────────────┘        └────────────┘        └────────────┘
-          │                      │                      │
-          │                      │                      │
-          │ navigate('Profile')  │ navigate('Details')  │
-          └─────────────────────►└─────────────────────►
-                                                         │
-                                                         │
-                                                         ▼
-                                                  ┌────────────┐
-                                                  │  Settings  │
-                                                  │   Screen   │
-                                                  └────────────┘
-
-
-                         ┌──────────────────────┐
-                         │       goBack()       │
-                         │                      │
-                         │ Returns to the       │
-                         │ previous screen      │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                              Previous Screen
 ```
 
 The arrows show the navigation flow. From Home, you can go to Profile. From Profile, you can go to Details. From Details, you can go to Settings. From Settings, you can go back to the previous screen or navigate directly to Home.
