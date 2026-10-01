@@ -1855,21 +1855,21 @@ export default function App() {
     // More validation of data needs to be performed
 
     if (editingUserId !== null) {
-      const updatedUsers = registeredUsers.map((user) => {
+      const updatedUsers = registeredUsers.map((user) =>
         user.id === editingUserId ? 
-          { 
-            ...user,
-            firstName: firstName.trim(),
-            surname: surname.trim(),
-            email: email.trim(),
-            phoneNumber: phoneNumber.trim(),
-            age: age.trim(),
-          } : user
+        {
+          ...user,
+          firstName: firstName.trim(),
+          surname: surname.trim(),
+          email: email.trim(),
+          phoneNumber: phoneNumber.trim(),
+          age: age.trim(),
         }
-      });
+        : user
+      );
 
-      setRegisteredUsers(updatedUsers); 
-      setEditingUserId(null); 
+      setRegisteredUsers(updatedUsers);
+      setEditingUserId(null);
     } else {
       // Create new registration object
       const newUser: Registration = {
@@ -1982,7 +1982,7 @@ export default function App() {
       <FlatList 
         data={registeredUsers}
         keyExtractor={(item) => item.id}
-        renderItem={({item, index} : {item : Registration}) => 
+        renderItem={({item, index} : {item : Registration, index: any}) => 
           <UserCard
             fn={item.firstName}
             sn={item.surname}
