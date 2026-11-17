@@ -86,7 +86,7 @@
 
 - [ ] My **reference list is extensive and matches my actual dependencies** — every package in `package.json` that I added (not just the ones that came with the template) appears in my references.
 - [ ] My reference list includes **all relevant documentation I used**, such as:
-  - [ ] React core concepts and hooks — `https://react.dev/reference/react` (e.g. `useState`, `useEffect`, `useMemo`, `useCContext` as used)
+  - [ ] React core concepts and hooks — `https://react.dev/reference/react` (e.g. `useState`, `useEffect`, `useMemo`, `useContext` as used)
   - [ ] React Native components — `https://reactnative.dev/docs/` (e.g. `View`, `Text`, `FlatList`, `TextInput`, `TouchableHighlight`, `TouchableOpacity`, `Pressable`, `StyleSheet`)
   - [ ] Navigation — `https://reactnavigation.org/docs/` (whichever navigators I actually used, e.g. Native Stack, Bottom Tabs) or the Expo Router documentation at `https://docs.expo.dev/router/introduction/` if I used file-based routing
   - [ ] Expo — `https://docs.expo.dev/` (SDK reference, `expo install`, `expo-doctor`, `app.json` / `app.config.js`)

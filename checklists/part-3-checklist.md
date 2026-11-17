@@ -221,8 +221,8 @@ Before submitting your Final PoE, ensure the following requirements have been co
 
 - [ ] The reference list **covers every dependency you added** — every package in `package.json` beyond the template defaults
 - [ ] References include the **documentation you actually consulted**, including (where used):
-  - [ ] `https://react.dev/reference/react` — for hooks and core React concepts (`useState`, `useEffect`, `useMemo`, `useCallback`)
-  - [ ] `https://reactnative.dev/docs/` — for components used (`View`, `Text`, `FlatList`, `TextInput`, `Pressable`, `StyleSheet`, `Modal`)
+  - [ ] `https://react.dev/reference/react` — for hooks and core React concepts (`useState`, `useEffect`, `useMemo`, `useContext`)
+  - [ ] `https://reactnative.dev/docs/` — for components used (`View`, `Text`, `FlatList`, `TextInput` ,`TouchableHighlight`, `TouchableOpacity`, `Pressable`, `StyleSheet`, `Modal`)
   - [ ] `https://reactnavigation.org/docs/` — if using React Navigation (state which navigators)
   - [ ] `https://docs.expo.dev/router/introduction/` — if using Expo Router
   - [ ] `https://docs.expo.dev/` — for SDK reference, `expo install`, `expo-doctor`, `app.json`
